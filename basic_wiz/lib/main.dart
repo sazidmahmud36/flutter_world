@@ -75,10 +75,26 @@ class HomeActivity extends StatelessWidget{
         child: ListView(
           children: [
             DrawerHeader(child: Text("SAZID")),
-            ListTile(title: Text("Home")),
-            ListTile(title: Text("Contact")),
-            ListTile(title: Text("Profile")),
-            ListTile(title: Text("Email")),
+            ListTile(
+                leading: Icon(Icons.home),
+                title: Text("Home"),
+                onTap: (){MySnackBar("Drawer (Home)", context);}
+            ),
+            ListTile(
+                leading: Icon(Icons.settings),
+                title: Text("Settings"),
+                onTap: (){MySnackBar("Drawer (Settings)", context);}
+            ),
+            ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Profile"),
+                onTap: (){MySnackBar("Drawer (Profile)", context);}
+            ),
+            ListTile(
+                leading: Icon(Icons.email),
+                title: Text("Email"),
+                onTap: (){MySnackBar("Drawer (Email)", context);}
+            ),
           ],
         ),
       ),
