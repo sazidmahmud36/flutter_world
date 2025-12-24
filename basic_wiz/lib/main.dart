@@ -43,6 +43,14 @@ class HomeActivity extends StatelessWidget{
           IconButton(onPressed: (){MySnackBar("I'm More Button", context);}, icon: Icon(Icons.more_vert)),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          MySnackBar("I'm Floating Action Button", context);
+        },
+        elevation: 10,
+        child: Icon(Icons.add),
+        backgroundColor: Colors.lightBlueAccent,
+      ),
       body: Center(
         child: Text("Hello Flutter Basic"),
       ),
