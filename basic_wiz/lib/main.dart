@@ -74,7 +74,16 @@ class HomeActivity extends StatelessWidget{
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("SAZID")),
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+                child: UserAccountsDrawerHeader(
+                  accountName: Text("Sazid Mahmud",style: TextStyle(color: Colors.amber),),
+                  accountEmail: Text("sazidmahmud@gmail.com"),
+                  decoration: BoxDecoration(color: Colors.black),
+                  currentAccountPicture: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),
+                  onDetailsPressed: (){MySnackBar("This is my Account", context);},
+                )
+            ),
             ListTile(
                 leading: Icon(Icons.home),
                 title: Text("Home"),
