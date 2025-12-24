@@ -71,6 +71,17 @@ class HomeActivity extends StatelessWidget{
         },
 
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(child: Text("SAZID")),
+            ListTile(title: Text("Home")),
+            ListTile(title: Text("Contact")),
+            ListTile(title: Text("Profile")),
+            ListTile(title: Text("Email")),
+          ],
+        ),
+      ),
       body: Center(
         child: Text("Hello Flutter Basic"),
       ),
