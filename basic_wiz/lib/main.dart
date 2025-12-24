@@ -24,11 +24,16 @@ class HomeActivity extends StatelessWidget{
       appBar: AppBar(
         title: Text("Basic Widget App"),
         backgroundColor: Colors.lightBlueAccent,
-        titleSpacing: 0,
-        centerTitle: true,
+        titleSpacing: 10,
+        // centerTitle: true,
         toolbarHeight: 55,
         toolbarOpacity: 1,
         elevation: 6,
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.comment)),
+          IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
+          IconButton(onPressed: (){}, icon: Icon(Icons.map)),
+        ],
       ),
       body: Center(
         child: Text("Hello Flutter Basic"),
