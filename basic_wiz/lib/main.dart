@@ -143,17 +143,24 @@ class HomeActivity extends StatelessWidget{
           ],
         ),
       ),
-      body: Container(
-        height: 250,
-        width: 250,
-        child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),
-        alignment: Alignment.center,
-        margin: EdgeInsets.fromLTRB(50, 20, 50, 20),
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          border: Border.all(color: Colors.black, width: 6),
-        ),
-      ),
+      // body: Container(
+      //   height: 250,
+      //   width: 250,
+      //   child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),
+      //   alignment: Alignment.center,
+      //   margin: EdgeInsets.fromLTRB(50, 20, 50, 20),
+      //   decoration: BoxDecoration(
+      //     color: Colors.amber,
+      //     border: Border.all(color: Colors.black, width: 6),
+      //   ),
+      // ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
+          Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
+          Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
+      ],),
     );
   }
 }
