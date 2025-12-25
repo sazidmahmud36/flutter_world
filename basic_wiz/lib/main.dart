@@ -161,6 +161,7 @@ class HomeActivity extends StatelessWidget{
           Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
           Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
       ],),
+
     );
   }
 }
