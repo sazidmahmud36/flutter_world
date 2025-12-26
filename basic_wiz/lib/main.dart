@@ -26,8 +26,18 @@ class HomeActivity extends StatelessWidget{
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      padding: EdgeInsets.all(25),
+      backgroundColor: Colors.amber,
+      foregroundColor: Colors.black,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(6)),
+      )
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Basic Widget App"),
@@ -154,13 +164,21 @@ class HomeActivity extends StatelessWidget{
       //     border: Border.all(color: Colors.black, width: 6),
       //   ),
       // ),
+      // body: Row(
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   children: [
+      //     Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
+      //     Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
+      //     Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
+      // ],),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
-          Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
-          Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
-      ],),
+          TextButton(onPressed: (){MySnackBar("This is Text Button", context);}, child: Text("Text Button")),
+          ElevatedButton(onPressed: (){MySnackBar("This is elevated Button", context);}, child: Text("Elevated"),style: buttonStyle,),
+          OutlinedButton(onPressed: (){MySnackBar("This is Outline Button", context);}, child: Text("Outline"))
+        ],
+      ),
 
     );
   }
