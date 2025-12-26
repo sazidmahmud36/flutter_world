@@ -25,12 +25,27 @@ class HomeActivity extends StatelessWidget{
         SnackBar(content: Text(message))
     );
   }
+  MyAlertDialog(context){
+    return showDialog(context: context, builder: (BuildContext context){
+      return Expanded(child: AlertDialog(
+        title: Text("ALERT!!"),
+        content: Text("Do you want to delete?"),
+        actions: [
+          TextButton(onPressed: (){
+            MySnackBar("Deleted Successfully!", context);
+            Navigator.of(context).pop();
+          }, child: Text("Yes")),
+          TextButton(onPressed: (){Navigator.of(context).pop();}, child: Text("No")),
+        ],
+      ));
+    });
+  }
 
 
   @override
   Widget build(BuildContext context) {
     final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-      padding: EdgeInsets.all(25),
+      padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
       backgroundColor: Colors.amber,
       foregroundColor: Colors.black,
       shape: RoundedRectangleBorder(
@@ -171,13 +186,16 @@ class HomeActivity extends StatelessWidget{
       //     Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
       //     Container(height: 100, width: 100,child: Image.network("https://avatars.githubusercontent.com/u/45362238?v=4"),),
       // ],),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          TextButton(onPressed: (){MySnackBar("This is Text Button", context);}, child: Text("Text Button")),
-          ElevatedButton(onPressed: (){MySnackBar("This is elevated Button", context);}, child: Text("Elevated"),style: buttonStyle,),
-          OutlinedButton(onPressed: (){MySnackBar("This is Outline Button", context);}, child: Text("Outline"))
-        ],
+      // body: Row(
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   children: [
+      //     TextButton(onPressed: (){MySnackBar("This is Text Button", context);}, child: Text("Text Button")),
+      //     ElevatedButton(onPressed: (){MySnackBar("This is elevated Button", context);}, child: Text("Elevated"),style: buttonStyle,),
+      //     OutlinedButton(onPressed: (){MySnackBar("This is Outline Button", context);}, child: Text("Outline"))
+      //   ],
+      // ),
+      body: Center(
+        child: ElevatedButton(onPressed: (){MyAlertDialog(context);}, child: Text("Click"),style: buttonStyle,),
       ),
 
     );
