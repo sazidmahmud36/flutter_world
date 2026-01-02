@@ -32,7 +32,7 @@ class HomeActivity extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ActivityOne()),
+                MaterialPageRoute(builder: (context) => ActivityOne("This is from home to activity 1")),
               );
             },
             child: Text("Activity 1"),
@@ -41,7 +41,7 @@ class HomeActivity extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ActivityTwo()),
+                MaterialPageRoute(builder: (context) => ActivityTwo("This is from home to activity 2")),
               );
             },
             child: Text("Activity 2"),
@@ -53,7 +53,11 @@ class HomeActivity extends StatelessWidget {
 }
 
 class ActivityOne extends StatelessWidget {
-  const ActivityOne({super.key});
+  String msg;
+   ActivityOne(
+       this.msg,
+       {super.key}
+       );
 
   @override
   Widget build(BuildContext context) {
@@ -69,8 +73,9 @@ class ActivityOne extends StatelessWidget {
             Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeActivity()));
           }, child: Text("home")),
           ElevatedButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>ActivityTwo()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>ActivityTwo("This is from activity 1 to activity 2")));
           }, child: Text("Activity 2")),
+          Text(msg),
         ],
       ),
     );
@@ -78,7 +83,11 @@ class ActivityOne extends StatelessWidget {
 }
 
 class ActivityTwo extends StatelessWidget {
-  const ActivityTwo({super.key});
+  String msg;
+  ActivityTwo(
+      this.msg,
+      {super.key}
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +97,7 @@ class ActivityTwo extends StatelessWidget {
         backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
       ),
-      body: Center(child: Text("ActivityTwo")),
+      body: Center(child: Text(msg)),
     );
   }
 }
