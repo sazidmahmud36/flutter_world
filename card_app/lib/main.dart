@@ -40,6 +40,20 @@ class HomeActivity extends StatelessWidget{
           ),
         ),
       ),
+      // body: Center(
+      //   child: CircularProgressIndicator(
+      //     color: Colors.deepOrangeAccent,
+      //     strokeWidth: 10,
+      //     backgroundColor: Colors.blue,
+      //   ),
+      // ),
+      // body: Center(
+      //   child: LinearProgressIndicator(
+      //     color: Colors.deepOrangeAccent,
+      //     minHeight: 10,
+      //     backgroundColor: Colors.blue,
+      //   ),
+      // ),
     );
   }
 
