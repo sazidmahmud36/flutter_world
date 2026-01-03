@@ -38,15 +38,37 @@ class HomeActivity extends StatelessWidget{
 
       // ==================== FractionallySizedBox ==================
 
-      body: Center(
-        child: FractionallySizedBox(
-          widthFactor: 0.5,
-          heightFactor: 0.5,
-          child: Container(
+      // body: Center(
+      //   child: FractionallySizedBox(
+      //     widthFactor: 0.5,
+      //     heightFactor: 0.5,
+      //     child: Container(
+      //       color: Colors.green,
+      //     ),
+      //   ),
+      // ),
+
+
+      // ==================== Layout Builder ==================
+
+      body: LayoutBuilder(builder: (BuildContext context, BoxConstraints constrains){
+        if(constrains.maxWidth > 600){
+          return Container(
+            height: 400,
+            width: 400,
             color: Colors.green,
-          ),
-        ),
-      ),
+          );
+        }else{
+          return Container(
+            height: 200,
+            width: 200,
+            color: Colors.red,
+          );
+        }
+      }),
+
+
+
     );
   }
 
