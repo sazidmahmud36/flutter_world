@@ -51,23 +51,40 @@ class HomeActivity extends StatelessWidget{
 
       // ==================== Layout Builder ==================
 
-      body: LayoutBuilder(builder: (BuildContext context, BoxConstraints constrains){
-        if(constrains.maxWidth > 600){
-          return Container(
-            height: 400,
-            width: 400,
-            color: Colors.green,
-          );
-        }else{
-          return Container(
-            height: 200,
-            width: 200,
-            color: Colors.red,
-          );
-        }
-      }),
+      // body: LayoutBuilder(builder: (BuildContext context, BoxConstraints constrains){
+      //   if(constrains.maxWidth > 600){
+      //     return Container(
+      //       height: 400,
+      //       width: 400,
+      //       color: Colors.green,
+      //     );
+      //   }else{
+      //     return Container(
+      //       height: 200,
+      //       width: 200,
+      //       color: Colors.red,
+      //     );
+      //   }
+      // }),
 
-
+      // ==================== Single Child ScrollView ==================
+      body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(height: 200, width: 200, color: Colors.black,),
+            Container(height: 200, width: 200, color: Colors.red,),
+            Container(height: 200, width: 200, color: Colors.blue,),
+            Container(height: 200, width: 200, color: Colors.yellow,),
+            Container(height: 200, width: 200, color: Colors.greenAccent,),
+            Container(height: 200, width: 200, color: Colors.grey,),
+            Container(height: 200, width: 200, color: Colors.brown,),
+            Container(height: 200, width: 200, color: Colors.pink,),
+            Container(height: 200, width: 200, color: Colors.deepPurple,),
+          ],
+        ),
+      )
 
     );
   }
